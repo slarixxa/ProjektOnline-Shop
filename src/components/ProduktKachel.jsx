@@ -1,9 +1,10 @@
-const ProduktKachel = ({ produktname, produktBild }) => {
+const ProduktKachel = ({ produktname, produktBild, produktbeschreibung }) => {
   return (
-    <article className="">
+    <article className="border-black border">
       <h1>{produktname}</h1>
       <img src={produktBild}></img>
-      <button>Submit</button>
+      <p>{produktbeschreibung}</p>
+      <button className="border rounded-md bg-orange-600">Einfügen</button>
     </article>
   );
 };

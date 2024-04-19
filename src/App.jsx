@@ -1,15 +1,12 @@
 import Header from "./components/Header";
-import ProduktKachel from "./components/ProduktKachel";
+import Produkte from "./components/Produkte";
 
 function App() {
   return (
-    <>
+    <div className="grid gap-2">
       <Header />
-      <ProduktKachel produktname="Artikel 1" produktBild="/Artikel-1.jpg" />
-      <ProduktKachel produktname="Artikel 2" produktBild="/Artikel-1.jpg" />
-      <ProduktKachel produktname="Artikel 3" produktBild="/Artikel-1.jpg" />
-      <ProduktKachel produktname="Artikel 4" produktBild="/Artikel-1.jpg" />
-    </>
+      <Produkte />
+    </div>
   );
 }
 
