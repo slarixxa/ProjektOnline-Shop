@@ -1,37 +1,16 @@
 import ProduktKachel from "./ProduktKachel";
+import produktejson from "../mocks/produkte.json";
 const Produkte = () => {
   return (
     <div className="grid grid-cols-3 gap-2">
-      <ProduktKachel
-        produktname="Artikel 1"
-        produktBild="/Artikel-1.jpg"
-        produktbeschreibung="Text hier"
-      />
-      <ProduktKachel
-        produktname="Artikel 2"
-        produktBild="/Artikel-1.jpg"
-        produktbeschreibung="Text hier"
-      />
-      <ProduktKachel
-        produktname="Artikel 3"
-        produktBild="/Artikel-1.jpg"
-        produktbeschreibung="Text hier"
-      />
-      <ProduktKachel
-        produktname="Artikel 4"
-        produktBild="/Artikel-1.jpg"
-        produktbeschreibung="Text hier"
-      />
-      <ProduktKachel
-        produktname="Artikel 4"
-        produktBild="/Artikel-1.jpg"
-        produktbeschreibung="Text hier"
-      />
-      <ProduktKachel
-        produktname="Artikel 4"
-        produktBild="/Artikel-1.jpg"
-        produktbeschreibung="Text hier"
-      />
+      {produktejson.map((produkt) => (
+        <ProduktKachel
+          produktname={produkt.produktname}
+          produktBild={produkt.produktBild}
+          produktbeschreibung={produkt.produktbeschreibung}
+          key={produkt.produktname}
+        />
+      ))}
     </div>
   );
 };

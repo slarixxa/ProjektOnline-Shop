@@ -4,6 +4,7 @@ const Header = () => {
     <header className="bg-gray-800 text-yellow-400 p-4">
       <div className="container mx-auto flex">
         <h1 className="text-2xl font-bold underline">Mein Online-Shop</h1>
+        <a href="/shoppingList">Einkausliste</a>
         <button className="ml-auto flex">
           Warenkorb
           <svg

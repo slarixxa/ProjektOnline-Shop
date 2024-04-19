@@ -1,15 +1,14 @@
 import Header from "./components/Header";
-import Produkte from "./components/Produkte";
 import Seitenfooter from "./components/Seitenfooter";
 
-function App() {
+function ShoppingListApp() {
   return (
     <div className="grid gap-2">
       <Header />
-      <Produkte />
+      <h1>Meine Einkaufsliste</h1>
       <Seitenfooter />
     </div>
   );
 }
 
-export default App;
+export default ShoppingListApp;

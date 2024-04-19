@@ -1,0 +1,32 @@
+[
+  {
+    "produktname": "Artikel 1",
+    "produktBild": "/Artikel-1.jpg",
+    "produktbeschreibung": "hallor"
+  },
+  {
+    "produktname": "Artikel 2",
+    "produktBild": "/Artikel-1.jpg",
+    "produktbeschreibung": "Text hier"
+  },
+  {
+    "produktname": "Artikel 3",
+    "produktBild": "/Artikel-1.jpg",
+    "produktbeschreibung": "Text hier"
+  },
+  {
+    "produktname": "Artikel 4",
+    "produktBild": "/Artikel-1.jpg",
+    "produktbeschreibung": "Text hier"
+  },
+  {
+    "produktname": "Artikel 5",
+    "produktBild": "/Artikel-1.jpg",
+    "produktbeschreibung": "Text hier"
+  },
+  {
+    "produktname": "Artikel 6",
+    "produktBild": "/Artikel-1.jpg",
+    "produktbeschreibung": "Text hier"
+  }
+]
