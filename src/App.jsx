@@ -4,7 +4,7 @@ import Seitenfooter from "./components/Seitenfooter";
 
 function App() {
   return (
-    <div className="grid gap-2">
+    <div className="grid gap-10">
       <Header />
       <Produkte />
       <Seitenfooter />

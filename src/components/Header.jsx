@@ -3,8 +3,12 @@ const Header = () => {
   return (
     <header className="bg-gray-800 text-yellow-400 p-4">
       <div className="container mx-auto flex">
-        <h1 className="text-2xl font-bold underline">Mein Online-Shop</h1>
-        <a href="/shoppingList">Einkausliste</a>
+        <a href="/" className="text-2xl font-bold underline">
+          Mein Online-Shop
+        </a>
+        <a href="/shoppingList" className="ml-auto mr-4">
+          Einkausliste
+        </a>
         <button className="ml-auto flex">
           Warenkorb
           <svg
