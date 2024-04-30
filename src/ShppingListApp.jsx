@@ -5,6 +5,14 @@ import Seitenfooter from "./components/Seitenfooter";
 function ShoppingListApp() {
   const [inputValue, setInputValue] = useState("");
   const [buttonColor, setButtonColor] = useState("bg-gray-200");
+  const [outstandingItems, setOutstandingItems] = useState([]);
+  const [completedItems, setCompletedItems] = useState([]);
+
+  const handleCompleteItem = (index) => {
+    const itemToComplete = outstandingItems[index];
+    setCompletedItems([...completedItems, itemToComplete]);
+    setOutstandingItems(outstandingItems.filter((_, i) => i !== index));
+  };
 
   const handleInputChange = (event) => {
     const value = event.target.value;
@@ -18,6 +26,11 @@ function ShoppingListApp() {
   };
   const handleAddIngredient = () => {
     console.log("Zutat hinzufügen: ", inputValue);
+
+    if (inputValue.trim() !== "") {
+      setOutstandingItems([...outstandingItems, inputValue]);
+      setInputValue("");
+    }
   };
 
   return (
@@ -35,6 +48,43 @@ function ShoppingListApp() {
             value={inputValue}
             onChange={handleInputChange}
           />
+          <section className="grid gap-3">
+            <h3 className="text-2xl">Ausstehende Einkaufsliste</h3>
+            {!outstandingItems.length && <p>Keine ausstehende Artikel</p>}
+            {outstandingItems.map((item, index) => (
+              <div key={index} className="flex justify-between items-center">
+                <p>{item}</p>
+                <button onClick={() => handleCompleteItem(index)}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-6 h-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m4.5 12.75 6 6 9-13.5"
+                    />
+                  </svg>
+                </button>
+              </div>
+            ))}
+          </section>
+          <section className="grid gab-3">
+            <h3 className="text-2xl">Abgeschlossene Einkausliste</h3>
+            {!completedItems.length && <p>Keine abgeschlossene Artikel</p>}
+            {completedItems.map((item, index) => (
+              <div
+                key={index}
+                className="flex justify-between items-center line-through"
+              >
+                <p>{item}</p>
+              </div>
+            ))}
+          </section>
           <button
             className={`p-3 rounded shadow cursor-pointer ${buttonColor} bg-gray-800  p-4 mt-4`}
             onClick={handleAddIngredient}
