@@ -1,12 +1,12 @@
 [
   {
     "produktname": "Artikel 1",
-    "produktBild": "/Artikel-1.jpg",
+    "produktBild": "/Produkt_1_Tomaten.jpg",
     "produktbeschreibung": "hallo"
   },
   {
     "produktname": "Artikel 2",
-    "produktBild": "/Artikel-1.jpg",
+    "produktBild": "/Produkt_2_Gurken.jpg",
     "produktbeschreibung": "Text hier"
   },
   {
