@@ -8,6 +8,7 @@ const Produkte = ({ addToCart }) => {
     console.log("Produkt wurde zum Warenkorb hinzugefügt:", produkt);
     addToCart(produkt);
   };
+
   return (
     <div className="grid grid-cols-3 gap-2">
       {produktejson.map((produkt, index) => (
