@@ -1,5 +1,6 @@
 //Kopf
-const Header = () => {
+import PropTypes from "prop-types";
+const Header = ({ onCartClick }) => {
   return (
     <header className="bg-gray-800 text-yellow-400 p-4">
       <div className="container mx-auto flex">
@@ -9,7 +10,7 @@ const Header = () => {
         <a href="/shoppingList" className="ml-auto mr-4">
           Einkausliste
         </a>
-        <button className="ml-auto flex">
+        <button className="ml-auto flex" onClick={onCartClick}>
           Warenkorb
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -23,5 +24,8 @@ const Header = () => {
       </div>
     </header>
   );
+};
+Header.propTypes = {
+  onCartClick: PropTypes.func.isRequired,
 };
 export default Header;
