@@ -16,9 +16,19 @@ function App() {
     setCartItems([...cartItems, produkt]);
     //addToCart(produkt);
   };
+
+  const removeFromCart = (index) => {
+    const newCartItems = [...cartItems];
+    newCartItems.splice(index, 1);
+    setCartItems(newCartItems);
+  };
   return (
     <div className="grid gap-10">
-      <Header onCartClick={handleCartClick} />
+      <Header
+        onCartClick={handleCartClick}
+        cartItems={cartItems}
+        removeFromCart={removeFromCart}
+      />
       <Produkte addToCart={addToCart} />
       <Seitenfooter />
     </div>
