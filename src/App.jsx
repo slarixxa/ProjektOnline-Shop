@@ -30,6 +30,7 @@ function App() {
         removeFromCart={removeFromCart}
       />
       <Produkte addToCart={addToCart} />
+
       <Seitenfooter />
     </div>
   );

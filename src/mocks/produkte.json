@@ -1,32 +1,32 @@
 [
   {
-    "produktname": "Artikel 1",
-    "produktBild": "/Produkt_1_Tomaten.jpg",
+    "produktname": "Artikel 1: Blumenkohl",
+    "produktBild": "/Blumenkohl.jpg",
     "produktbeschreibung": "hallo"
   },
   {
-    "produktname": "Artikel 2",
+    "produktname": "Artikel 2: Gurken",
     "produktBild": "/Produkt_2_Gurken.jpg",
     "produktbeschreibung": "Text hier"
   },
   {
-    "produktname": "Artikel 3",
-    "produktBild": "/Artikel-1.jpg",
+    "produktname": "Artikel 3: Paprika",
+    "produktBild": "/Paprika.jpg",
     "produktbeschreibung": "Text hier"
   },
   {
-    "produktname": "Artikel 4",
-    "produktBild": "/Artikel-1.jpg",
+    "produktname": "Artikel 4: Bananen",
+    "produktBild": "/Bananen.jpg",
     "produktbeschreibung": "Text hier"
   },
   {
-    "produktname": "Artikel 5",
-    "produktBild": "/Artikel-1.jpg",
+    "produktname": "Artikel 5: Erdbeeren",
+    "produktBild": "/Erdbeeren.jpg",
     "produktbeschreibung": "Text hier"
   },
   {
-    "produktname": "Artikel 6",
-    "produktBild": "/Artikel-1.jpg",
+    "produktname": "Artikel 6: Orangen",
+    "produktBild": "/Orangen.jpg",
     "produktbeschreibung": "Text hier"
   }
 ]
