@@ -7,6 +7,7 @@ function ShoppingListApp() {
   const [buttonColor, setButtonColor] = useState("bg-gray-200");
   const [outstandingItems, setOutstandingItems] = useState([]);
   const [completedItems, setCompletedItems] = useState([]);
+  const [cartItems] = useState([]);
 
   const handleCompleteItem = (index) => {
     const itemToComplete = outstandingItems[index];
@@ -39,7 +40,7 @@ function ShoppingListApp() {
 
   return (
     <div className="grid gap-2">
-      <Header />
+      <Header cartItems={cartItems} />
       <div className="text-center">
         <h1 className="text 2xl: font-bold mb-4">Meine Einkaufsliste</h1>
         <div className="flex flex-col items-center">

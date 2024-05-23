@@ -1,4 +1,3 @@
-//Kopf
 import PropTypes from "prop-types";
 import { useState } from "react";
 const Header = ({ onCartClick, removeFromCart, cartItems }) => {
@@ -55,9 +54,16 @@ const Header = ({ onCartClick, removeFromCart, cartItems }) => {
     </header>
   );
 };
+
 Header.propTypes = {
-  onCartClick: PropTypes.func.isRequired,
+  onCartClick: PropTypes.func,
   cartItems: PropTypes.array.isRequired,
-  removeFromCart: PropTypes.func.isRequired,
+  removeFromCart: PropTypes.func,
 };
+
+Header.defaultProps = {
+  onCartClick: () => {},
+  removeFromCart: () => {},
+};
+
 export default Header;
