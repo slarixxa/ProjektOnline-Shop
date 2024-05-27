@@ -2,31 +2,31 @@
   {
     "produktname": "Artikel 1: Blumenkohl",
     "produktBild": "/Blumenkohl.jpg",
-    "produktbeschreibung": "hallo"
+    "produktbeschreibung": "Frischer Blumenkohl – perfekt für gesunde Mahlzeiten und vielseitige Gerichte."
   },
   {
     "produktname": "Artikel 2: Gurken",
     "produktBild": "/Produkt_2_Gurken.jpg",
-    "produktbeschreibung": "Text hier"
+    "produktbeschreibung": "Frische Gurken – ideal für Salate, Snacks und erfrischende Sommergerichte."
   },
   {
     "produktname": "Artikel 3: Paprika",
-    "produktBild": "/Paprika.jpg",
-    "produktbeschreibung": "Text hier"
+    "produktBild": "/Paprika (2).jpg",
+    "produktbeschreibung": "Frische Paprika– perfekt für Salate, Pfannengerichte und als gesunder Snack."
   },
   {
     "produktname": "Artikel 4: Bananen",
     "produktBild": "/Bananen.jpg",
-    "produktbeschreibung": "Text hier"
+    "produktbeschreibung": "Süße und reife Bananen – ideal für unterwegs, Smoothies oder als gesunde Nascherei."
   },
   {
     "produktname": "Artikel 5: Erdbeeren",
     "produktBild": "/Erdbeeren.jpg",
-    "produktbeschreibung": "Text hier"
+    "produktbeschreibung": "Fruchtige und saftige Erdbeeren, perfekt für Desserts, Snacks oder frische Fruchtsalate."
   },
   {
     "produktname": "Artikel 6: Orangen",
     "produktBild": "/Orangen.jpg",
-    "produktbeschreibung": "Text hier"
+    "produktbeschreibung": "Sonnengereifte Orangen voller Saftigkeit und Vitamine, ideal für erfrischende Säfte oder als gesunde Snacks."
   }
 ]

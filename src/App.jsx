@@ -11,10 +11,10 @@ function App() {
       cartItems.map((item) => item.produktname)
     );
   };
+
   const addToCart = (produkt) => {
     console.log("Produkt wurde zum Warenkorb hinzugefügt:", produkt);
     setCartItems([...cartItems, produkt]);
-    //addToCart(produkt);
   };
 
   const removeFromCart = (index) => {
@@ -22,6 +22,7 @@ function App() {
     newCartItems.splice(index, 1);
     setCartItems(newCartItems);
   };
+
   return (
     <div className="grid gap-10">
       <Header

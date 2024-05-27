@@ -15,7 +15,7 @@ const ProduktKachel = ({ produktInfo, onAddToCart }) => {
       <img src={produktBild}></img>
       <p>{produktbeschreibung}</p>
       <button
-        className="border rounded-md bg-orange-600"
+        className="border rounded-md bg-orange-500 w-24 py-1 px-2  text-white font-semibold hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:ring-opacity-50"
         onClick={handleAddToCart}
       >
         Einfügen
