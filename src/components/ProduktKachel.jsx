@@ -7,8 +7,6 @@ const ProduktKachel = ({ produktInfo, onAddToCart }) => {
     onAddToCart(produktInfo);
     console.log("Add to cart clicked:", produktInfo);
   };
-
-  //const ProduktKachel = ({ produktname, produktBild, produktbeschreibung }) => {
   return (
     <article className="border-black border">
       <h1>{produktname}</h1>
