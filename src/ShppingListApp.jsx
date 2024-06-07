@@ -9,6 +9,8 @@ function ShoppingListApp() {
   const [completedItems, setCompletedItems] = useState([]);
   const [cartItems] = useState([]);
 
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleCompleteItem = (index) => {
     const itemToComplete = outstandingItems[index];
     setCompletedItems([...completedItems, itemToComplete]);
@@ -23,16 +25,18 @@ function ShoppingListApp() {
     const value = event.target.value;
     setInputValue(value);
 
-    if (value.trim() !== "") {
+    if (/^[a-zA-Z\s]*$/.test(value)) {
       setButtonColor("bg-yellow-400");
+      setErrorMessage("");
     } else {
       setButtonColor("bg-gray-200");
+      setErrorMessage("Nur Buchstaben und Leerzeichen sind erlaubt.");
     }
   };
   const handleAddIngredient = () => {
     console.log("Zutat hinzufügen: ", inputValue);
 
-    if (inputValue.trim() !== "") {
+    if (inputValue.trim() !== "" && /^[a-zA-Z\s]*$/.test(inputValue)) {
       setOutstandingItems([...outstandingItems, inputValue]);
       setInputValue("");
     }
@@ -53,6 +57,7 @@ function ShoppingListApp() {
             value={inputValue}
             onChange={handleInputChange}
           />
+          {errorMessage && <p className="text-red-500">{errorMessage}</p>}
           <section className="grid gap-3">
             <h3 className="text-2xl">Ausstehende Einkaufsliste</h3>
             {!outstandingItems.length && <p>Keine ausstehende Artikel</p>}
