@@ -8,7 +8,7 @@ function ShoppingListApp() {
   const [buttonColor, setButtonColor] = useState("bg-gray-200");
   const [outstandingItems, setOutstandingItems] = useState([]);
   const [completedItems, setCompletedItems] = useState([]);
-  const [cartItems, addToCart, removeFromCart] = useCart();
+  const [cartItems, , removeFromCart] = useCart();
 
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -38,7 +38,7 @@ function ShoppingListApp() {
     console.log("Zutat hinzufügen: ", inputValue);
 
     if (inputValue.trim() !== "" && /^[a-zA-Z\s]*$/.test(inputValue)) {
-      addToCart({ produktname: inputValue });
+      // addToCart({ produktname: inputValue });
       setOutstandingItems([...outstandingItems, inputValue]);
       setInputValue("");
     }

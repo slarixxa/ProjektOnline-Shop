@@ -16,16 +16,28 @@ export const useCart = () => {
     localStorage.setItem("globalCart", JSON.stringify(updatedCart));
   };
 
-  const addToCart = (item) => {
-    const updatedCart = [...cartItems, item];
-    setCartItems(updatedCart);
-    updateLocalStorage(updatedCart);
+  const addToCart = (produkt) => {
+    const updatedCartItems = [...cartItems];
+    const index = updatedCartItems.findIndex(
+      (item) => item.produkt.produktname === produkt.produktname
+    );
+
+    if (index !== -1) {
+      updatedCartItems[index].quantity++;
+    } else {
+      updatedCartItems.push({ produkt: produkt, quantity: 1 });
+    }
+
+    setCartItems(updatedCartItems);
+    updateLocalStorage(updatedCartItems);
   };
 
   const removeFromCart = (productName) => {
+    console.log(cartItems, productName);
     const updatedCart = cartItems.filter(
-      (item) => item.produktname !== productName
+      (item) => item.produkt.produktname !== productName
     );
+    console.log(updatedCart);
     setCartItems(updatedCart);
     updateLocalStorage(updatedCart);
   };
