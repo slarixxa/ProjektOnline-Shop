@@ -1,13 +1,14 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Seitenfooter from "./components/Seitenfooter";
+import { useCart } from "./components/useCarts.hooks";
 
 function ShoppingListApp() {
   const [inputValue, setInputValue] = useState("");
   const [buttonColor, setButtonColor] = useState("bg-gray-200");
   const [outstandingItems, setOutstandingItems] = useState([]);
   const [completedItems, setCompletedItems] = useState([]);
-  const [cartItems] = useState([]);
+  const [cartItems, addToCart, removeFromCart] = useCart();
 
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -37,6 +38,7 @@ function ShoppingListApp() {
     console.log("Zutat hinzufügen: ", inputValue);
 
     if (inputValue.trim() !== "" && /^[a-zA-Z\s]*$/.test(inputValue)) {
+      addToCart({ produktname: inputValue });
       setOutstandingItems([...outstandingItems, inputValue]);
       setInputValue("");
     }
@@ -44,7 +46,11 @@ function ShoppingListApp() {
 
   return (
     <div className="grid gap-2">
-      <Header cartItems={cartItems} />
+      <Header
+        cartItems={cartItems}
+        removeFromCart={removeFromCart}
+        onCartClick={() => {}}
+      />
       <div className="text-center">
         <h1 className="text 2xl: font-bold mb-4">Meine Einkaufsliste</h1>
         <div className="flex flex-col items-center">

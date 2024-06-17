@@ -7,6 +7,7 @@ const Header = ({ onCartClick, removeFromCart, cartItems }) => {
     setIsCartVisible(!isCartVisible);
     onCartClick();
   };
+
   return (
     <header className="bg-gray-800 text-yellow-400 p-4">
       <div className="container mx-auto flex">
@@ -17,7 +18,8 @@ const Header = ({ onCartClick, removeFromCart, cartItems }) => {
           Einkausliste
         </a>
         <button className="ml-auto flex items-center" onClick={handleCartClick}>
-          Warenkorb ({cartItems.length})
+          Warenkorb (
+          {cartItems.reduce((total, item) => total + item.quantity, 0)})
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -38,9 +40,12 @@ const Header = ({ onCartClick, removeFromCart, cartItems }) => {
                   key={index}
                   className="p-2 flex justify-between items-center text-gray-700"
                 >
-                  {item.produktname}
+                  <div>
+                    {item.produkt.produktname} ({item.quantity}{" "}
+                    {item.quantity === 1 ? "Stück" : "Stücke"})
+                  </div>
                   <button
-                    onClick={() => removeFromCart(index)}
+                    onClick={() => removeFromCart(item.produktname)}
                     className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
                   >
                     Enfernen

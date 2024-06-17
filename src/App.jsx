@@ -12,8 +12,18 @@ function App() {
     );
   };
   const addToCart = (produkt) => {
-    console.log("Produkt wurde zum Warenkorb hinzugefügt:", produkt);
-    setCartItems([...cartItems, produkt]);
+    const updatedCartItems = [...cartItems];
+    const index = updatedCartItems.findIndex(
+      (item) => item.produkt.produktname === produkt.produktname
+    );
+
+    if (index !== -1) {
+      updatedCartItems[index].quantity++;
+    } else {
+      updatedCartItems.push({ produkt: produkt, quantity: 1 });
+    }
+
+    setCartItems(updatedCartItems);
   };
 
   const removeFromCart = (index) => {
