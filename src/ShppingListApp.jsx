@@ -9,8 +9,18 @@ function ShoppingListApp() {
   const [outstandingItems, setOutstandingItems] = useState([]);
   const [completedItems, setCompletedItems] = useState([]);
   const [cartItems, , removeFromCart] = useCart();
-
   const [errorMessage, setErrorMessage] = useState("");
+
+  const [infoMessage, setInfoMessage] = useState("");
+
+  const allowedItems = [
+    "Blumekohl",
+    "Gurken",
+    "Paprika",
+    "Bananen",
+    "Erdbeeren",
+    "Orangen",
+  ];
 
   const handleCompleteItem = (index) => {
     const itemToComplete = outstandingItems[index];
@@ -38,7 +48,14 @@ function ShoppingListApp() {
     console.log("Zutat hinzufügen: ", inputValue);
 
     if (inputValue.trim() !== "" && /^[a-zA-Z\s]*$/.test(inputValue)) {
-      // addToCart({ produktname: inputValue });
+      if (allowedItems.includes(inputValue)) {
+        setInfoMessage("");
+      } else {
+        setInfoMessage(
+          `Das Produkt "${inputValue}" ist nicht im Online-Shop verfügbar, wird aber zur Einkaufsliste hinzugefügt.`
+        );
+      }
+
       setOutstandingItems([...outstandingItems, inputValue]);
       setInputValue("");
     }
@@ -52,7 +69,11 @@ function ShoppingListApp() {
         onCartClick={() => {}}
       />
       <div className="text-center">
-        <h1 className="text 2xl: font-bold mb-4">Meine Einkaufsliste</h1>
+        <h1 className="text 2xl: font-bold mb-4">
+          Meine Einkaufsliste, diese Einkaufsliste dient zur effizienten
+          Organisation meiner Einkäufe, einschließlich nicht im Online-Shop
+          verfügbarer Artikel.
+        </h1>
         <div className="flex flex-col items-center">
           <input
             type="text"
@@ -64,6 +85,7 @@ function ShoppingListApp() {
             onChange={handleInputChange}
           />
           {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+          {infoMessage && <p className="text-yellow-500">{infoMessage}</p>}
           <section className="grid gap-3">
             <h3 className="text-2xl">Ausstehende Einkaufsliste</h3>
             {!outstandingItems.length && <p>Keine ausstehende Artikel</p>}

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 
-// Funktion zur Initialisierung des Warenkorbs aus dem Local Storage
 const initializeCartFromStorage = () => {
   const storedCart = localStorage.getItem("globalCart");
   return storedCart ? JSON.parse(storedCart) : [];
@@ -11,7 +10,6 @@ const initializeCartFromStorage = () => {
 export const useCart = () => {
   const [cartItems, setCartItems] = useState(initializeCartFromStorage());
 
-  // Funktion, um den Warenkorb im Local Storage zu aktualisieren
   const updateLocalStorage = (updatedCart) => {
     localStorage.setItem("globalCart", JSON.stringify(updatedCart));
   };
@@ -42,7 +40,6 @@ export const useCart = () => {
     updateLocalStorage(updatedCart);
   };
 
-  // Synchronisieren des globalen Warenkorbs bei Änderungen an cartItems
   useEffect(() => {
     updateLocalStorage(cartItems);
   }, [cartItems]);
